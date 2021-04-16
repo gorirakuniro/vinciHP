@@ -7,18 +7,28 @@
     <title>vincihomepage</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+    <script>
+        (function(d) {
+          var config = {
+            kitId: 'kvx3aip',
+            scriptTimeout: 3000,
+            async: true
+          },
+          h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+        })(document);
+      </script>
 </head>
 <body>
     <div class="container">
         <header class="header">
             <div class="header__logo">
-                <img src="" alt="">
+                <img src="/images/logo.png" alt="">
             </div>
             <div class="header__gnav">
                 <ul class="header__nav">
-                    <li class="header__nav--item"><a href="">work</a></li>
-                    <li class="header__nav--item"><a href="">about</a></li>
-                    <li class="header__nav--item"><a href="">contact</a></li>
+                    <li class="header__nav--item"><a href="work.html">work</a></li>
+                    <li class="header__nav--item"><a href="about.html">about</a></li>
+                    <!-- <li class="header__nav--item"><a href="">contact</a></li> -->
                 </ul>
                 <div class="header__sns"><i class="fab fa-instagram"></i></div>
                 <div class="header__sns"><i class="fab fa-twitter"></i></div>
@@ -26,10 +36,15 @@
         </header>
         <main class="top_main">
             <div class="main__text">
-                <h1 class="main__title"></h1>
-                <p class="main__sub"></p>
+                <h1 class="main__title">
+                    Creating new things with<br>
+                    ideas and designs
+                </h1>
+                <p class="main__sub">「アイデア」と「デザイン」で新しいものを生み出す</p>
             </div>
-            <div class="main__image"></div>
+            <div class="main__image">
+                <img src="/images/logo.png" alt="">
+            </div>
         </main>
         <div class="top_news">
             <div class="topnews__title">News</div>
