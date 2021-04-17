@@ -1,13 +1,49 @@
+@import url(variables.css);
+
+$breakpoints: (
+	'sm': 'screen and (max-width: 500px)',
+	'md': 'screen and (max-width: 768px)',
+	'lg': 'screen and (max-width: 1000px)',
+	'xl': 'screen and (max-width: 1200px)',
+) !default;
+
+@mixin mq($breakpoint: md) {
+	@media #{map-get($breakpoints, $breakpoint)} {
+		@content;
+	}
+}
+
 body {
+	--color-main: #fff;
+	--color-text: #000;
+	--color-text-sub: #dadada;
+
+	--font-sl: 3rem;
+	--font-sm: 2rem;
+	--font-ssl: 1.5rem;
+	--font-ssm: 1.3rem;
+	--font-ss: 1rem;
+	--font-sssl: 0.8rem;
+	--font-sssm: 0.5rem;
+	--font-ssss: 0.3rem;
+
+	--font-wb: 600;
+	--font-wn: 400;
+	--font-wl: 200;
+
 	font-family: futura-pt, '游ゴシック体', 'Yu Gothic', YuGothic, sans-serif;
 	font-style: normal;
-	font-weight: 400;
+	font-weight: var(--font-wn);
 
 	margin: 0;
 }
 .container {
 	width: 80%;
 	margin: 10% auto;
+	@include mq(xl) {
+		width: 90%;
+		margin: 5% auto;
+	}
 }
 
 .header {
@@ -18,12 +54,21 @@ body {
 	top: 0;
 	left: 0;
 	display: flex;
+	flex-direction: row;
 	align-items: center;
 	justify-self: space-between;
 	z-index: 99;
+	@include mq(xl) {
+		width: 100%;
+		height: 100px;
+		padding: 0;
+	}
 	.header__logo {
 		width: 100px;
 		margin: 10px 0;
+		@include mq(xl) {
+			margin: 0;
+		}
 		img {
 			width: 100%;
 		}
@@ -32,16 +77,22 @@ body {
 		position: absolute;
 		right: 10%;
 		display: flex;
+		flex-direction: row;
 		align-items: center;
+		@include mq(xl) {
+			display: none;
+		}
 		.header__nav {
 			display: flex;
 			list-style: none;
 			width: 100%;
+
 			&--item {
 				margin: 0 20px;
 				a {
+					font-size: --font-xl;
 					text-decoration: none;
-					color: #000;
+					color: var(--color-text);
 				}
 			}
 		}
@@ -49,7 +100,7 @@ body {
 			margin: 0 10px;
 			a {
 				text-decoration: none;
-				color: #000;
+				color: var(--color-text);
 			}
 		}
 	}
@@ -59,32 +110,47 @@ body {
 	width: 100%;
 	height: 70vh;
 	position: relative;
+	@include mq(xl) {
+		height: 80vh;
+	}
 	.main__text {
 		width: 50%;
 		position: absolute;
 		top: 45%;
 		left: 0;
 		z-index: 10;
+		@include mq(xl) {
+			width: 100%;
+			top: 50%;
+		}
 		.main__title {
 			width: 100%;
 			margin: 0;
-			font-size: 3rem;
-			font-weight: 600;
+			font-size: var(--font-sl);
+			font-weight: var(--font-wb);
 
 			height: 120px;
 			position: relative;
 			overflow: hidden;
+			@include mq(xl) {
+				font-size: var(--font-ssl);
+				height: 70px;
+			}
 			span {
 				position: absolute;
 			}
 		}
 		.main__sub {
-			font-size: 1rem;
+			font-size: var(--font-ss);
 			font-weight: bold;
 
 			height: 30px;
 			position: relative;
 			overflow: hidden;
+			@include mq(xl) {
+				font-size: var(--font-sssl);
+				height: 20px;
+			}
 			span {
 				position: absolute;
 			}
@@ -97,6 +163,13 @@ body {
 		top: 0;
 		right: 0;
 		overflow: hidden;
+		@include mq(xl) {
+			width: 100%;
+			height: auto;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
 		img {
 			width: 100%;
 			height: auto;
@@ -108,9 +181,15 @@ body {
 	width: 100%;
 	margin: 20% 0;
 	position: relative;
+	@include mq(xl) {
+		margin: 0;
+	}
 	.topnews__title {
-		font-size: 2rem;
-		font-weight: 600;
+		font-size: var(--font-sm);
+		font-weight: var(--font-wb);
+		@include mq(xl) {
+			font-size: var(--font-ssm);
+		}
 	}
 	.topnews__view {
 		position: absolute;
@@ -125,7 +204,7 @@ body {
 			}
 		}
 		.topnews__more {
-			color: #000;
+			color: var(--color-text);
 		}
 		.left {
 			width: 40px;
@@ -144,21 +223,33 @@ body {
 			.topnews__item {
 				width: 100%;
 				padding: 20px 0;
-				border-top: 1px solid #dadada;
-				border-bottom: 1px solid #dadada;
+				border-top: 1px solid var(--color-text-sub);
+				border-bottom: 1px solid var(--color-text-sub);
 				display: flex;
 				list-style: none;
+				@include mq(xl) {
+					padding: 20px 0;
+					font-size: var(--font-sssl);
+				}
 				.topnews__date {
 					width: 20%;
 					margin-right: 10% 0;
-					font-size: 1.3rem;
-					font-weight: 400;
-					color: #dadada;
+					font-size: var(--font-ssm);
+					font-weight: var(--font-wn);
+					color: var(--color-text-sub);
+					@include mq(xl) {
+						width: 30%;
+						font-size: var(--font-ssm);
+					}
 				}
 				.topnews__text {
 					width: 70%;
-					font-size: 1.3rem;
-					font-weight: 600;
+					font-size: --font-ssm;
+					font-weight: var(--font-wb);
+					@include mq(xl) {
+						width: 60%;
+						font-size: var(--font-ss);
+					}
 				}
 			}
 		}
@@ -169,10 +260,17 @@ body {
 	width: 100%;
 	margin: 20% 0;
 	position: relative;
+	@include mq(xl) {
+		margin: 30% 0;
+	}
+
 	.topwork__title {
-		font-size: 2rem;
-		font-weight: 600;
+		font-size: var(--font-sm);
+		font-weight: var(--font-wb);
 		margin: 10px 0;
+		@include mq(xl) {
+			font-size: var(--font-ssl);
+		}
 	}
 	.topwork__view {
 		position: absolute;
@@ -187,7 +285,7 @@ body {
 			}
 		}
 		.topwork__more {
-			color: #000;
+			color: var(--color-text);
 		}
 	}
 	.left {
@@ -211,6 +309,10 @@ body {
 			margin: 1%;
 			overflow: hidden;
 			position: relative;
+			@include mq(xl) {
+				width: 100%;
+				height: 100%;
+			}
 			&--img {
 				width: 100%;
 				height: 100%;
@@ -220,8 +322,8 @@ body {
 				position: absolute;
 				bottom: 10px;
 				right: 10px;
-				font-size: 1.5rem;
-				font-weight: 600;
+				font-size: var(--font-ssl);
+				font-weight: var(--font-wb);
 			}
 		}
 	}
@@ -231,28 +333,42 @@ body {
 	width: 100%;
 	height: auto;
 	display: flex;
+	flex-direction: row;
 	position: relative;
+	@include mq(xl) {
+		flex-direction: column;
+	}
 	.topabout__left {
 		width: 26%;
 		margin: auto 0;
 		padding: 0 2%;
 		text-align: end;
+		@include mq(xl) {
+			width: 80%;
+			margin: 0 auto;
+			padding: 0;
+			text-align: center;
+		}
 		.topabout__title {
-			font-size: 2rem;
-			font-weight: 600;
+			font-size: var(--font-sm);
+			font-weight: var(--font-wb);
 			letter-spacing: 0.3rem;
 		}
 		.topabout__sub {
-			font-size: 1.3rem;
-			color: #dadada;
+			font-size: var(--font-ssm);
+			color: var(--color-text-sub);
 		}
 	}
 	.topabout__right {
 		width: 50%;
 		margin: 0 auto;
+		@include mq(xl) {
+			width: 80%;
+			margin: 10% auto;
+		}
 		.topabout__text {
 			letter-spacing: 0.1rem;
-			line-height: 1.5rem;
+			line-height: var(--font-ssl);
 		}
 	}
 	.topabout__view {
@@ -262,13 +378,16 @@ body {
 		display: flex;
 		align-items: center;
 		text-decoration: none;
+		@include mq(xl) {
+			bottom: 0px;
+		}
 		&:hover {
 			.left {
 				transform: translateX(10px) skew(50deg);
 			}
 		}
 		.topabout__more {
-			color: #000;
+			color: var(--color-text);
 		}
 	}
 	.left {
@@ -287,12 +406,16 @@ body {
 	.footer__text {
 		width: 80%;
 		margin: auto;
-		font-size: 1.5rem;
-		font-weight: 600;
+		font-size: var(--font-ssl);
+		font-weight: var(--font-wb);
 		text-align: center;
+		@include mq(xl) {
+			font-size: var(--font-ss);
+		}
 	}
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////// mouse
 
 body {
@@ -305,10 +428,13 @@ body {
 	z-index: 2;
 	pointer-events: none;
 	transition: transform 0.1s ease;
+	@include mq(xl) {
+		display: none;
+	}
 	.stalker__pointer {
 		transition: all 0.4s ease;
 		border-radius: 100%;
-		background: rgba(204, 204, 204, 0.5);
+		background: #dada;
 		position: absolute;
 		top: -8px;
 		left: -8px;
@@ -317,7 +443,16 @@ body {
 	}
 }
 #stalker.active .stalker__pointer {
-	background: rgba(255, 152, 0, 0.3);
+	background: linear-gradient(
+		to right,
+		red,
+		orange,
+		yellow,
+		green,
+		aqua,
+		blue,
+		purple
+	);
 	top: -16px;
 	left: -16px;
 	width: 32px;
@@ -378,7 +513,7 @@ img {
 		left: 0;
 		width: 0%;
 		height: 100%;
-		background: #fff;
+		background: #2cb4ad;
 		position: absolute;
 		animation: rev-img 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
 		animation-delay: 1s;
@@ -410,4 +545,105 @@ img {
 		left: 100%;
 		width: 0%;
 	}
+}
+
+/* //////////////////////////////////////////// */
+/*　ハンバーガーボタン　*/
+.hamburger {
+	display: none;
+	position: fixed;
+	z-index: 3;
+	right: 20px;
+	top: 20px;
+	width: 42px;
+	height: 42px;
+	text-align: center;
+	@include mq(xl) {
+		display: block;
+	}
+	span {
+		display: block;
+		position: absolute;
+		width: 30px;
+		height: 2px;
+		left: 6px;
+		background: var(--color-text);
+		-webkit-transition: 0.3s ease-in-out;
+		-moz-transition: 0.3s ease-in-out;
+		transition: 0.3s ease-in-out;
+		&:nth-child(1) {
+			top: 10px;
+		}
+		&:nth-child(2) {
+			top: 20px;
+		}
+	}
+}
+
+/* ナビ開いてる時のボタン */
+.hamburger.active span:nth-child(1) {
+	top: 16px;
+	left: 6px;
+	background: var(--color-text);
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+.hamburger.active span:nth-child(2),
+.hamburger.active span:nth-child(3) {
+	top: 16px;
+	background: var(--color-text);
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.globalMenuSp {
+	position: fixed;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	color: var(--color-text);
+	background: var(--color-main);
+	text-align: center;
+	width: 100%;
+	height: 100vh;
+	opacity: 0;
+	transition: opacity 0.6s ease, visibility 0.6s ease;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	&__list {
+		margin: 0 auto;
+		padding: 0;
+		width: 100%;
+		&--item {
+			list-style-type: none;
+			padding: 0;
+			width: 100%;
+			transition: 0.4s all;
+			&:last-child {
+				padding-bottom: 0;
+			}
+			&:hover {
+				background: var(--color-text);
+				a {
+					color: var(--color-main);
+				}
+			}
+			a {
+				display: block;
+				color: var(--color-text);
+				padding: 1em 0;
+				text-decoration: none;
+				font-size: var(--font-sm);
+			}
+		}
+	}
+}
+
+/* このクラスを、jQueryで付与・削除する */
+nav.globalMenuSp.active {
+	opacity: 100;
 }

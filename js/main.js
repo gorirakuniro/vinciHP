@@ -47,3 +47,21 @@ window.addEventListener('scroll', () => {
 		}
 	});
 });
+
+// humberger menu
+
+var nav = document.querySelector('.toggle_btn');
+var btn = document.querySelector('.header__nav');
+
+// menu open close
+$(function () {
+	$('.hamburger').click(function () {
+		$(this).toggleClass('active');
+
+		if ($(this).hasClass('active')) {
+			$('.globalMenuSp').addClass('active');
+		} else {
+			$('.globalMenuSp').removeClass('active');
+		}
+	});
+});
