@@ -189,4 +189,107 @@ body {
   font-size: 1.3rem;
   font-weight: 600;
 }
+
+.top_work {
+  width: 100%;
+  margin: 20% 0;
+  position: relative;
+}
+
+.top_work .topwork__title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.top_work .topwork__view {
+  position: absolute;
+  top: 5px;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+}
+
+.top_work .topwork__view:hover .left {
+  -webkit-transform: translateX(10px) skew(50deg);
+          transform: translateX(10px) skew(50deg);
+}
+
+.top_work .topwork__view .topwork__more {
+  color: #000;
+}
+
+.top_work .left {
+  width: 40px;
+  height: 8px;
+  border-bottom: 1px solid #505050;
+  border-right: 1px solid #505050;
+  -webkit-transform: skew(50deg);
+          transform: skew(50deg);
+  -webkit-transition: 0.4s all;
+  transition: 0.4s all;
+}
+
+.top_work .topwork__list {
+  width: 105%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-transform: translateX(-1%);
+          transform: translateX(-1%);
+}
+
+.top_work .topwork__list .topwork__item {
+  width: 23%;
+  height: 23%;
+  margin: 1%;
+  overflow: hidden;
+  position: relative;
+}
+
+.top_work .topwork__list .topwork__item--img {
+  width: 100%;
+  height: 100%;
+}
+
+.top_work .topwork__list .topwork__item--text {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.top_about {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.top_about .topabout__left {
+  width: 30%;
+}
+
+.top_about .topabout__left .topabout__title {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.top_about .topabout__right {
+  width: 70%;
+}
 /*# sourceMappingURL=style.css.map */
