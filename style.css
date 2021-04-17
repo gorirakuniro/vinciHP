@@ -278,18 +278,80 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
 }
 
 .top_about .topabout__left {
-  width: 30%;
+  width: 26%;
+  margin: auto 0;
+  padding: 0 2%;
+  text-align: end;
 }
 
 .top_about .topabout__left .topabout__title {
   font-size: 2rem;
   font-weight: 600;
+  letter-spacing: 0.3rem;
+}
+
+.top_about .topabout__left .topabout__sub {
+  font-size: 1.3rem;
+  color: #dadada;
 }
 
 .top_about .topabout__right {
-  width: 70%;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.top_about .topabout__right .topabout__text {
+  letter-spacing: 0.1rem;
+  line-height: 1.5rem;
+}
+
+.top_about .topabout__view {
+  position: absolute;
+  bottom: -10px;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+}
+
+.top_about .topabout__view:hover .left {
+  -webkit-transform: translateX(10px) skew(50deg);
+          transform: translateX(10px) skew(50deg);
+}
+
+.top_about .topabout__view .topabout__more {
+  color: #000;
+}
+
+.top_about .left {
+  width: 40px;
+  height: 8px;
+  border-bottom: 1px solid #505050;
+  border-right: 1px solid #505050;
+  -webkit-transform: skew(50deg);
+          transform: skew(50deg);
+  -webkit-transition: 0.4s all;
+  transition: 0.4s all;
+}
+
+.footer {
+  width: 100%;
+  margin: 10% auto;
+}
+
+.footer .footer__text {
+  width: 80%;
+  margin: auto;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */
