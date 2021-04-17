@@ -17,6 +17,8 @@
           h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
         })(document);
       </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container">
@@ -45,16 +47,20 @@
         <main class="top_main">
             <div class="main__text">
                 <h1 class="main__title">
-                    Creating new things with<br>
-                    ideas and designs
+                    <span>Creating new things with<br>
+                    ideas and designs</span>
                 </h1>
-                <p class="main__sub">「アイデア」と「デザイン」で新しいものを生み出す</p>
+                <p class="main__sub">
+                    <span>
+                        「アイデア」と「デザイン」で新しいものを生み出す
+                    </span>
+                </p>
             </div>
             <div class="main__image">
                 <img src="/images/colud.jpg" alt="">
             </div>
         </main>
-        <div class="top_news">
+        <div class="top_news scrollanime downup ">
             <div class="topnews__title">News</div>
             <a class="topnews__view" href="#">
                 <div class="topnews__more" >
@@ -83,7 +89,7 @@
                 </ul>
             </div>
         </div>
-        <div class="top_work">
+        <div class="top_work scrollanime downup ">
             <div class="topwork__title">Work</div>
             <a class="topwork__view" href="#">
                 <div class="topwork__more" >
@@ -126,7 +132,7 @@
                 </div>
             </div>
         </div> 
-        <div class="top_about">
+        <div class="top_about scrollanime downup ">
             <div class="topabout__left">
                 <div class="topabout__title">About</div>
                 <div class="topabout__sub">vinciとは？</div>
@@ -153,5 +159,12 @@
             <div class="footer__text">&copy; 2021 vinci.All rights reserved</div>
         </footer>
     </div> 
+    
+
+    <div id="stalker">
+        <div class="stalker__pointer"></div>
+    </div>
+
+    <script src="js/main.js"></script>
 </body>
 </html>      

@@ -60,18 +60,34 @@ body {
 	height: 70vh;
 	position: relative;
 	.main__text {
+		width: 50%;
 		position: absolute;
 		top: 45%;
 		left: 0;
 		z-index: 10;
 		.main__title {
+			width: 100%;
 			margin: 0;
 			font-size: 3rem;
 			font-weight: 600;
+
+			height: 120px;
+			position: relative;
+			overflow: hidden;
+			span {
+				position: absolute;
+			}
 		}
 		.main__sub {
 			font-size: 1rem;
 			font-weight: bold;
+
+			height: 30px;
+			position: relative;
+			overflow: hidden;
+			span {
+				position: absolute;
+			}
 		}
 	}
 	.main__image {
@@ -241,7 +257,7 @@ body {
 	}
 	.topabout__view {
 		position: absolute;
-		bottom: -10px;
+		bottom: -100px;
 		right: 0;
 		display: flex;
 		align-items: center;
@@ -267,12 +283,131 @@ body {
 
 .footer {
 	width: 100%;
-	margin: 10% auto;
+	margin-top: 20%;
 	.footer__text {
 		width: 80%;
 		margin: auto;
 		font-size: 1.5rem;
 		font-weight: 600;
 		text-align: center;
+	}
+}
+
+//////// mouse
+
+body {
+	position: relative;
+}
+#stalker {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: 2;
+	pointer-events: none;
+	transition: transform 0.1s ease;
+	.stalker__pointer {
+		transition: all 0.4s ease;
+		border-radius: 100%;
+		background: rgba(204, 204, 204, 0.5);
+		position: absolute;
+		top: -8px;
+		left: -8px;
+		width: 16px;
+		height: 16px;
+	}
+}
+#stalker.active .stalker__pointer {
+	background: rgba(255, 152, 0, 0.3);
+	top: -16px;
+	left: -16px;
+	width: 32px;
+	height: 32px;
+}
+
+////// fadein //////////
+
+/*1.フェードインアニメーションの指定*/
+.scrollanime {
+	opacity: 0;
+} /*一瞬表示されるのを防ぐ*/
+.fadeInDown {
+	animation-name: fadeInDown;
+	animation-duration: 5s;
+	animation-fill-mode: forwards;
+}
+@keyframes fadeInDown {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+		transform: translate(0);
+	}
+}
+
+/*2.上下の動きを指定*/
+.updown {
+	transform: translateY(-100px);
+}
+.downup {
+	transform: translateY(100px);
+}
+
+/*3.左右の動きを指定*/
+.sect02 {
+	overflow: hidden;
+} /*横スクロールバーを隠す*/
+.slide-right {
+	transform: translateX(200px);
+}
+.slide-left {
+	transform: translateX(-200px);
+}
+
+/// img animation ///
+img {
+	opacity: 0;
+	animation: appear-text 1s linear forwards;
+	animation-delay: 1.4s;
+}
+
+.main__image {
+	&:after {
+		content: '';
+		top: 0;
+		left: 0;
+		width: 0%;
+		height: 100%;
+		background: #fff;
+		position: absolute;
+		animation: rev-img 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+		animation-delay: 1s;
+	}
+}
+
+@keyframes appear-text {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes rev-img {
+	0% {
+		left: 0%;
+		width: 0%;
+	}
+
+	50% {
+		left: 0;
+		width: 100%;
+	}
+
+	100% {
+		left: 100%;
+		width: 0%;
 	}
 }

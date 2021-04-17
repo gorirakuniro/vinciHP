@@ -81,6 +81,7 @@ body {
 }
 
 .top_main .main__text {
+  width: 50%;
   position: absolute;
   top: 45%;
   left: 0;
@@ -88,14 +89,29 @@ body {
 }
 
 .top_main .main__text .main__title {
+  width: 100%;
   margin: 0;
   font-size: 3rem;
   font-weight: 600;
+  height: 120px;
+  position: relative;
+  overflow: hidden;
+}
+
+.top_main .main__text .main__title span {
+  position: absolute;
 }
 
 .top_main .main__text .main__sub {
   font-size: 1rem;
   font-weight: bold;
+  height: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.top_main .main__text .main__sub span {
+  position: absolute;
 }
 
 .top_main .main__image {
@@ -311,7 +327,7 @@ body {
 
 .top_about .topabout__view {
   position: absolute;
-  bottom: -10px;
+  bottom: -100px;
   right: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -344,7 +360,7 @@ body {
 
 .footer {
   width: 100%;
-  margin: 10% auto;
+  margin-top: 20%;
 }
 
 .footer .footer__text {
@@ -353,5 +369,175 @@ body {
   font-size: 1.5rem;
   font-weight: 600;
   text-align: center;
+}
+
+body {
+  position: relative;
+}
+
+#stalker {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 2;
+  pointer-events: none;
+  -webkit-transition: -webkit-transform 0.1s ease;
+  transition: -webkit-transform 0.1s ease;
+  transition: transform 0.1s ease;
+  transition: transform 0.1s ease, -webkit-transform 0.1s ease;
+}
+
+#stalker .stalker__pointer {
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  border-radius: 100%;
+  background: rgba(204, 204, 204, 0.5);
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  width: 16px;
+  height: 16px;
+}
+
+#stalker.active .stalker__pointer {
+  background: rgba(255, 152, 0, 0.3);
+  top: -16px;
+  left: -16px;
+  width: 32px;
+  height: 32px;
+}
+
+/*1.フェードインアニメーションの指定*/
+.scrollanime {
+  opacity: 0;
+}
+
+/*一瞬表示されるのを防ぐ*/
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+          animation-name: fadeInDown;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+
+/*2.上下の動きを指定*/
+.updown {
+  -webkit-transform: translateY(-100px);
+          transform: translateY(-100px);
+}
+
+.downup {
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+}
+
+/*3.左右の動きを指定*/
+.sect02 {
+  overflow: hidden;
+}
+
+/*横スクロールバーを隠す*/
+.slide-right {
+  -webkit-transform: translateX(200px);
+          transform: translateX(200px);
+}
+
+.slide-left {
+  -webkit-transform: translateX(-200px);
+          transform: translateX(-200px);
+}
+
+img {
+  opacity: 0;
+  -webkit-animation: appear-text 1s linear forwards;
+          animation: appear-text 1s linear forwards;
+  -webkit-animation-delay: 1.4s;
+          animation-delay: 1.4s;
+}
+
+.main__image:after {
+  content: '';
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: #fff;
+  position: absolute;
+  -webkit-animation: rev-img 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+          animation: rev-img 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+@-webkit-keyframes appear-text {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes appear-text {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes rev-img {
+  0% {
+    left: 0%;
+    width: 0%;
+  }
+  50% {
+    left: 0;
+    width: 100%;
+  }
+  100% {
+    left: 100%;
+    width: 0%;
+  }
+}
+
+@keyframes rev-img {
+  0% {
+    left: 0%;
+    width: 0%;
+  }
+  50% {
+    left: 0;
+    width: 100%;
+  }
+  100% {
+    left: 100%;
+    width: 0%;
+  }
 }
 /*# sourceMappingURL=style.css.map */
