@@ -49,19 +49,24 @@ window.addEventListener('scroll', () => {
 });
 
 // humberger menu
+const hum = document.querySelector('.hamburger');
+hum.addEventListener('click', (e) => {
+	hum.classList.toggle('active');
 
-var nav = document.querySelector('.toggle_btn');
-var btn = document.querySelector('.header__nav');
+	const hasactive = hum.classList.contains('active');
+	const gmenusp = document.querySelector('.globalMenuSp');
 
-// menu open close
-$(function () {
-	$('.hamburger').click(function () {
-		$(this).toggleClass('active');
-
-		if ($(this).hasClass('active')) {
-			$('.globalMenuSp').addClass('active');
-		} else {
-			$('.globalMenuSp').removeClass('active');
-		}
-	});
+	if (hasactive) {
+		gmenusp.classList.add('active');
+	} else {
+		gmenusp.classList.remove('active');
+	}
 });
+
+//loading animation
+window.onload = function () {
+	const spinner = document.getElementById('loading');
+
+	// Add .loaded to .loading
+	spinner.classList.add('loaded');
+};
