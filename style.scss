@@ -424,6 +424,9 @@ body::-webkit-scrollbar {
 .workslist {
 	width: 90%;
 	margin: 0 auto;
+	@include mq(xl) {
+		margin: 20% auto;
+	}
 	&__text {
 		display: flex;
 		align-items: flex-end;
@@ -431,19 +434,31 @@ body::-webkit-scrollbar {
 			font-size: var(--font-sl);
 			font-weight: var(--font-wb);
 			margin: 0;
+			@include mq(xl) {
+				font-size: var(--font-sm);
+			}
 		}
 		.workslist__items {
 			width: 50%;
 			margin: 10px 0;
 			display: flex;
+			@include mq(xl) {
+				font-size: var(--font-sssm);
+				margin: 5px;
+				width: 100%;
+			}
 			&--item {
 				padding: 0 30px;
 				border-right: 1px solid var(--color-text);
+				@include mq(xl) {
+					padding: 0 5px;
+				}
 			}
 		}
 	}
 	&___works {
 		width: 103%;
+
 		.workslist__lists {
 			list-style-type: none;
 			padding: 0;
@@ -451,9 +466,17 @@ body::-webkit-scrollbar {
 			display: flex;
 			flex-direction: row;
 			flex-wrap: wrap;
+			@include mq(xl) {
+				flex-direction: column;
+			}
+
 			&--item {
 				width: 27%;
 				margin: 3%;
+				@include mq(xl) {
+					width: 100%;
+					margin: 10% auto;
+				}
 				img {
 					width: 100%;
 					object-fit: cover;
@@ -464,14 +487,23 @@ body::-webkit-scrollbar {
 						margin: 2px 0;
 						font-size: var(--font-sssm);
 						color: var(--color-text-sub);
+						@include mq(xl) {
+							font-size: var(--font-sssl);
+						}
 					}
 					.workslist__lists--title {
 						margin: 2px 0;
 						font-size: var(--font-sssl);
+						@include mq(xl) {
+							font-size: var(--font-ss);
+						}
 					}
 					.workslist__lists--mov {
 						margin: 2px 0;
 						font-size: var(--font-sssm);
+						@include mq(xl) {
+							font-size: var(--font-sssl);
+						}
 					}
 				}
 			}

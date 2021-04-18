@@ -568,6 +568,12 @@ body::-webkit-scrollbar {
   margin: 0 auto;
 }
 
+@media screen and (max-width: 1200px) {
+  .workslist {
+    margin: 20% auto;
+  }
+}
+
 .workslist__text {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -583,6 +589,12 @@ body::-webkit-scrollbar {
   margin: 0;
 }
 
+@media screen and (max-width: 1200px) {
+  .workslist__text .workslist__title {
+    font-size: var(--font-sm);
+  }
+}
+
 .workslist__text .workslist__items {
   width: 50%;
   margin: 10px 0;
@@ -591,9 +603,23 @@ body::-webkit-scrollbar {
   display: flex;
 }
 
+@media screen and (max-width: 1200px) {
+  .workslist__text .workslist__items {
+    font-size: var(--font-sssm);
+    margin: 5px;
+    width: 100%;
+  }
+}
+
 .workslist__text .workslist__items--item {
   padding: 0 30px;
   border-right: 1px solid var(--color-text);
+}
+
+@media screen and (max-width: 1200px) {
+  .workslist__text .workslist__items--item {
+    padding: 0 5px;
+  }
 }
 
 .workslist___works {
@@ -616,9 +642,25 @@ body::-webkit-scrollbar {
       flex-wrap: wrap;
 }
 
+@media screen and (max-width: 1200px) {
+  .workslist___works .workslist__lists {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .workslist___works .workslist__lists--item {
   width: 27%;
   margin: 3%;
+}
+
+@media screen and (max-width: 1200px) {
+  .workslist___works .workslist__lists--item {
+    width: 100%;
+    margin: 10% auto;
+  }
 }
 
 .workslist___works .workslist__lists--item img {
@@ -637,14 +679,32 @@ body::-webkit-scrollbar {
   color: var(--color-text-sub);
 }
 
+@media screen and (max-width: 1200px) {
+  .workslist___works .workslist__lists--item .workslist__lists--text .workslist__lists--date {
+    font-size: var(--font-sssl);
+  }
+}
+
 .workslist___works .workslist__lists--item .workslist__lists--text .workslist__lists--title {
   margin: 2px 0;
   font-size: var(--font-sssl);
 }
 
+@media screen and (max-width: 1200px) {
+  .workslist___works .workslist__lists--item .workslist__lists--text .workslist__lists--title {
+    font-size: var(--font-ss);
+  }
+}
+
 .workslist___works .workslist__lists--item .workslist__lists--text .workslist__lists--mov {
   margin: 2px 0;
   font-size: var(--font-sssm);
+}
+
+@media screen and (max-width: 1200px) {
+  .workslist___works .workslist__lists--item .workslist__lists--text .workslist__lists--mov {
+    font-size: var(--font-sssl);
+  }
 }
 
 body {
