@@ -748,6 +748,39 @@ body::-webkit-scrollbar {
   }
 }
 
+.workitem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.workitem__left {
+  width: 40%;
+}
+
+.workitem__left .workitems__list {
+  list-style: none;
+  padding: 0;
+}
+
+.workitem__left .workitems__list .workitems__img {
+  margin: 5% auto;
+}
+
+.workitem__left .workitems__list .workitems__img img {
+  width: 100%;
+}
+
+.workitem__right {
+  position: fixed;
+  top: 15%;
+  right: 10%;
+  width: 40%;
+  height: 80vh;
+  background: var(--color-text-sub);
+  z-index: 55;
+}
+
 body {
   position: relative;
 }
