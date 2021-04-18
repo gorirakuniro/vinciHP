@@ -422,7 +422,7 @@ body::-webkit-scrollbar {
 }
 
 .workslist {
-	width: 90%;
+	width: 100%;
 	margin: 0 auto;
 	@include mq(xl) {
 		margin: 20% auto;
@@ -457,17 +457,21 @@ body::-webkit-scrollbar {
 		}
 	}
 	&___works {
-		width: 103%;
+		width: 100%;
 
 		.workslist__lists {
+			width: 106%;
 			list-style-type: none;
 			padding: 0;
 			transform: translateX(-3%);
 			display: flex;
 			flex-direction: row;
 			flex-wrap: wrap;
+			justify-content: space-between;
 			@include mq(xl) {
+				width: 100%;
 				flex-direction: column;
+				transform: translateX(0%);
 			}
 
 			&--item {

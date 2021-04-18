@@ -564,7 +564,7 @@ body::-webkit-scrollbar {
 }
 
 .workslist {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -623,10 +623,11 @@ body::-webkit-scrollbar {
 }
 
 .workslist___works {
-  width: 103%;
+  width: 100%;
 }
 
 .workslist___works .workslist__lists {
+  width: 106%;
   list-style-type: none;
   padding: 0;
   -webkit-transform: translateX(-3%);
@@ -640,14 +641,20 @@ body::-webkit-scrollbar {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 @media screen and (max-width: 1200px) {
   .workslist___works .workslist__lists {
+    width: 100%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
   }
 }
 
