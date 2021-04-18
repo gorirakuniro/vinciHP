@@ -509,32 +509,36 @@ body::-webkit-scrollbar {
 					width: 100%;
 					margin: 10% auto;
 				}
-				img {
-					width: 100%;
-					object-fit: cover;
-				}
-				.workslist__lists--text {
-					margin: 5% 0;
-					.workslist__lists--date {
-						margin: 2px 0;
-						font-size: var(--font-sssm);
-						color: var(--color-text-sub);
-						@include mq(xl) {
-							font-size: var(--font-sssl);
-						}
+				a {
+					text-decoration: none;
+					color: var(--color-text);
+					img {
+						width: 100%;
+						object-fit: cover;
 					}
-					.workslist__lists--title {
-						margin: 2px 0;
-						font-size: var(--font-sssl);
-						@include mq(xl) {
-							font-size: var(--font-ss);
+					.workslist__lists--text {
+						margin: 5% 0;
+						.workslist__lists--date {
+							margin: 2px 0;
+							font-size: var(--font-sssm);
+							color: var(--color-text-sub);
+							@include mq(xl) {
+								font-size: var(--font-sssl);
+							}
 						}
-					}
-					.workslist__lists--mov {
-						margin: 2px 0;
-						font-size: var(--font-sssm);
-						@include mq(xl) {
+						.workslist__lists--title {
+							margin: 2px 0;
 							font-size: var(--font-sssl);
+							@include mq(xl) {
+								font-size: var(--font-ss);
+							}
+						}
+						.workslist__lists--mov {
+							margin: 2px 0;
+							font-size: var(--font-sssm);
+							@include mq(xl) {
+								font-size: var(--font-sssl);
+							}
 						}
 					}
 				}
