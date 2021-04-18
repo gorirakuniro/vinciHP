@@ -476,7 +476,8 @@ body::-webkit-scrollbar {
 			}
 			&--item {
 				padding: 0 30px;
-				border-right: 1px solid var(--color-text);
+				border-right: 1px solid var(--color-text-sub);
+				color: var(--color-text-sub);
 				@include mq(xl) {
 					padding: 0 5px;
 				}

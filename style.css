@@ -646,7 +646,8 @@ body::-webkit-scrollbar {
 
 .workslist__text .workslist__items--item {
   padding: 0 30px;
-  border-right: 1px solid var(--color-text);
+  border-right: 1px solid var(--color-text-sub);
+  color: var(--color-text-sub);
 }
 
 @media screen and (max-width: 1200px) {
