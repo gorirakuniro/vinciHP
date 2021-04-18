@@ -942,4 +942,63 @@ nav.globalMenuSp.active {
   display: none !important;
   visibility: hidden;
 }
+
+#svgstroke {
+  fill: none;
+  stroke: #121212;
+  stroke-dasharray: 1800;
+  -webkit-animation: anime 5s cubic-bezier(0.14, 0.55, 0.84, 0.53);
+          animation: anime 5s cubic-bezier(0.14, 0.55, 0.84, 0.53);
+  -webkit-transition: 1s;
+  transition: 1s;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-55%, -40%);
+          transform: translate(-55%, -40%);
+}
+
+@-webkit-keyframes anime {
+  0% {
+    opacity: 0;
+    fill: none;
+    stroke-dashoffset: 1800;
+  }
+  50% {
+    opacity: 10;
+    fill: none;
+    stroke-dashoffset: 1800;
+  }
+  90% {
+    fill: rgba(255, 255, 255, 0);
+  }
+  100% {
+    opacity: 10;
+    fill: white;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes anime {
+  0% {
+    opacity: 0;
+    fill: none;
+    stroke-dashoffset: 1800;
+  }
+  50% {
+    opacity: 10;
+    fill: none;
+    stroke-dashoffset: 1800;
+  }
+  90% {
+    fill: rgba(255, 255, 255, 0);
+  }
+  100% {
+    opacity: 10;
+    fill: white;
+    stroke-dashoffset: 0;
+  }
+}
 /*# sourceMappingURL=style.css.map */
