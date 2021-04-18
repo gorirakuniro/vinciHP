@@ -3,6 +3,16 @@ body {
   --color-main: #fff;
   --color-text: #000;
   --color-text-sub: #dadada;
+  --color-sub: linear-gradient(
+		to right,
+		red,
+		orange,
+		yellow,
+		green,
+		aqua,
+		blue,
+		purple
+	);
   --font-sl: 3rem;
   --font-sm: 2rem;
   --font-ssl: 1.5rem;
@@ -114,6 +124,29 @@ body::-webkit-scrollbar {
 
 .header .header__gnav .header__nav--item {
   margin: 0 20px;
+  position: relative;
+}
+
+.header .header__gnav .header__nav--item::after {
+  content: '';
+  width: 0px;
+  height: 2px;
+  background: var(--color-sub);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.header .header__gnav .header__nav--item:hover {
+  opacity: 0.6;
+}
+
+.header .header__gnav .header__nav--item:hover::after {
+  width: 100%;
 }
 
 .header .header__gnav .header__nav--item a {
@@ -749,8 +782,7 @@ body {
 }
 
 #stalker.active .stalker__pointer {
-  background: -webkit-gradient(linear, left top, right top, from(red), color-stop(orange), color-stop(yellow), color-stop(green), color-stop(aqua), color-stop(blue), to(purple));
-  background: linear-gradient(to right, red, orange, yellow, green, aqua, blue, purple);
+  background: var(--color-text-sub);
   top: -16px;
   left: -16px;
   width: 32px;
