@@ -545,8 +545,14 @@ body::-webkit-scrollbar {
 
 .workitem {
 	display: flex;
+	@include mq(xl) {
+		margin: 20% 0;
+	}
 	&__left {
 		width: 40%;
+		@include mq(xl) {
+			width: 100%;
+		}
 		.workitems__list {
 			list-style: none;
 			padding: 0;
@@ -560,25 +566,82 @@ body::-webkit-scrollbar {
 	}
 	&__right {
 		position: fixed;
-		top: 15%;
+		top: 20%;
 		right: 10%;
 		width: 40%;
 		height: 80vh;
-		background: var(--color-text-sub);
 		z-index: 55;
+		background: var(--color-main);
+		transition: 0.4s all;
+		@include mq(xl) {
+			width: 90%;
+			height: 70vh;
+			left: 5%;
+			top: 30%;
+			transform: translateY(80%);
+		}
+		.up_btn {
+			display: none;
+			width: 50px;
+			height: 50px;
+			position: absolute;
+			top: 0;
+			left: 50%;
+			background: var(--color-main);
+			border-radius: 50%;
+			text-align: center;
+			line-height: 50px;
+			transform: translate(-50%, -50%);
+			@include mq(xl) {
+				display: block;
+			}
+		}
 		.workitem__title {
+			font-size: var(--font-sm);
+			font-weight: var(--font-wl);
+			letter-spacing: 0.1rem;
+			@include mq(xl) {
+				font-size: 1.5rem;
+				margin: 5% 0 1% 0;
+			}
 		}
 		.workitem__sub {
+			font-size: var(--font-ss);
 		}
 		.workitem__tab {
+			width: 30%;
+			margin: 10px 0;
+			display: flex;
 			&--item {
+				width: 50px;
+				padding: 0 0.2rem;
+				border: 1px solid var(--color-text-sub);
+				border-radius: 10px;
+				text-align: center;
+				color: var(--color-text-sub);
 			}
 		}
+		.workitem__text {
+			margin: 5px 0;
+			font-size: var(--font-sssl);
+			letter-spacing: 0.05rem;
+			line-height: 1.3rem;
+		}
 		.workitem__member {
+			width: 100%;
 			&--title {
+				font-size: var(--font-ssm);
+				color: var(--color-text-sub);
 			}
 			&--list {
+				display: flex;
+				list-style: none;
+				padding: 0;
+				margin: 5px 0;
 				&--item {
+					padding-right: 10px;
+					font-size: var(--font-sssl);
+					color: var(--color-text-sub);
 				}
 			}
 		}
@@ -889,6 +952,11 @@ nav.globalMenuSp.active {
 	opacity: 0;
 	display: none !important;
 	visibility: hidden;
+}
+
+///////////////upper btn
+.upper {
+	transform: translateY(0%);
 }
 
 ////////////////////
