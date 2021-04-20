@@ -7,9 +7,9 @@ upper.addEventListener('click', () => {
 	wright.classList.toggle('upper');
 	const hsup = wright.classList.contains('upper');
 	if (hsup) {
-		upper.innerHTML = '<i class="fas fa-dollar-sign"></i>';
+		upper.innerHTML = '<i class="fas fa-angle-down"></i>';
 	} else {
-		upper.innerHTML = '<i class="fas fa-dollar-sign"></i>';
+		upper.innerHTML = '<i class="fas fa-angle-up"></i>';
 	}
 });
 
