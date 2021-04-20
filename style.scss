@@ -36,7 +36,9 @@ body {
 	--font-ssss: 0.3rem;
 
 	--font-wb: 600;
+	--font-wnb: 500;
 	--font-wn: 400;
+	--font-wnl: 300;
 	--font-wl: 200;
 
 	font-family: futura-pt, '游ゴシック体', 'Yu Gothic', YuGothic, sans-serif;
@@ -56,14 +58,13 @@ body::-webkit-scrollbar {
 	@include mq(xl) {
 		width: 90%;
 		margin: 5% auto;
-		overflow: hidden;
 	}
 }
 
 .header {
-	width: 80%;
+	width: 86%;
 	height: auto;
-	padding: 0 10%;
+	padding: 0 7%;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -159,7 +160,7 @@ body::-webkit-scrollbar {
 			width: 100%;
 			margin: 0;
 			font-size: var(--font-sl);
-			font-weight: var(--font-wb);
+			font-weight: var(--font-wnb);
 
 			height: 120px;
 			position: relative;
@@ -219,7 +220,7 @@ body::-webkit-scrollbar {
 	}
 	.topnews__title {
 		font-size: var(--font-sm);
-		font-weight: var(--font-wb);
+		font-weight: var(--font-wnb);
 		@include mq(xl) {
 			font-size: var(--font-ssm);
 		}
@@ -278,7 +279,7 @@ body::-webkit-scrollbar {
 				.topnews__text {
 					width: 70%;
 					font-size: --font-ssm;
-					font-weight: var(--font-wb);
+					font-weight: var(--font-wnb);
 					@include mq(xl) {
 						width: 60%;
 						font-size: var(--font-ss);
@@ -299,7 +300,7 @@ body::-webkit-scrollbar {
 
 	.topwork__title {
 		font-size: var(--font-sm);
-		font-weight: var(--font-wb);
+		font-weight: var(--font-wnb);
 		margin: 10px 0;
 		@include mq(xl) {
 			font-size: var(--font-ssl);
@@ -350,16 +351,19 @@ body::-webkit-scrollbar {
 			}
 			&--img {
 				display: block;
-				width: 300px;
-				height: 250px;
+				width: 100%;
+				height: 30vh;
 				object-fit: cover;
+				@include mq(xl) {
+					height: 40vh;
+				}
 			}
 			&--text {
 				position: absolute;
 				bottom: 10px;
 				right: 10px;
 				font-size: var(--font-ssl);
-				font-weight: var(--font-wb);
+				font-weight: var(--font-wnb);
 			}
 		}
 	}
@@ -387,7 +391,7 @@ body::-webkit-scrollbar {
 		}
 		.topabout__title {
 			font-size: var(--font-sm);
-			font-weight: var(--font-wb);
+			font-weight: var(--font-wnb);
 			letter-spacing: 0.3rem;
 		}
 		.topabout__sub {
@@ -438,12 +442,12 @@ body::-webkit-scrollbar {
 
 .footer {
 	width: 100%;
-	margin-top: 20%;
+	margin-top: 15%;
 	.footer__text {
 		width: 80%;
 		margin: auto;
 		font-size: var(--font-ssl);
-		font-weight: var(--font-wb);
+		font-weight: var(--font-wnb);
 		text-align: center;
 		@include mq(xl) {
 			font-size: var(--font-ss);
@@ -451,6 +455,7 @@ body::-webkit-scrollbar {
 	}
 }
 
+/////// work ///////
 .workslist {
 	width: 100%;
 	margin: 0 auto;
@@ -462,7 +467,7 @@ body::-webkit-scrollbar {
 		align-items: flex-end;
 		.workslist__title {
 			font-size: var(--font-sl);
-			font-weight: var(--font-wb);
+			font-weight: var(--font-wnb);
 			margin: 0;
 			@include mq(xl) {
 				font-size: var(--font-sm);
@@ -489,7 +494,6 @@ body::-webkit-scrollbar {
 	}
 	&___works {
 		width: 100%;
-
 		.workslist__lists {
 			width: 106%;
 			list-style-type: none;
@@ -552,6 +556,7 @@ body::-webkit-scrollbar {
 	}
 }
 
+///// workitem //////
 .workitem {
 	display: flex;
 	@include mq(xl) {
@@ -580,13 +585,13 @@ body::-webkit-scrollbar {
 		width: 40%;
 		height: 80vh;
 		z-index: 55;
-		background: var(--color-main);
 		transition: 0.4s all;
 		@include mq(xl) {
 			width: 90%;
 			height: 70vh;
 			left: 5%;
 			top: 30%;
+			background: var(--color-main);
 			transform: translateY(80%);
 		}
 		.up_btn {
@@ -652,6 +657,118 @@ body::-webkit-scrollbar {
 					font-size: var(--font-sssl);
 					color: var(--color-text-sub);
 				}
+			}
+		}
+	}
+}
+
+////// about ///////
+.about {
+	width: 90%;
+	margin: 0 auto;
+	padding: 8% 0;
+	@include mq(xl) {
+		margin: 10% auto;
+	}
+	&__title {
+		font-size: var(--font-sl);
+		font-weight: var(--font-wnb);
+		letter-spacing: 0.3rem;
+		@include mq(xl) {
+			font-size: var(--font-sm);
+		}
+	}
+	&__img {
+		width: 100%;
+		height: 70vh;
+		margin: 2% 0;
+		@include mq(xl) {
+			height: 100%;
+			height: 40vh;
+		}
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	&__main {
+		width: 80%;
+		margin: 8% 0;
+		@include mq(xl) {
+			width: 95%;
+		}
+		&--item {
+			font-size: var(--font-sm);
+			letter-spacing: 0.1rem;
+			@include mq(xl) {
+				font-size: var(--font-ssl);
+			}
+		}
+		&--text {
+			margin: 3% 0;
+			font-size: var(--font-ss);
+			line-height: 2.5rem;
+			letter-spacing: 0.1rem;
+			@include mq(xl) {
+				font-size: var(--font-ss);
+				line-height: 2rem;
+			}
+		}
+	}
+	&__join {
+		width: 100%;
+		margin-top: 5%;
+		&--title {
+			width: 30%;
+			margin: 3% auto;
+			text-align: center;
+			font-size: var(--font-sl);
+			font-weight: var(--font-wnb);
+			@include mq(xl) {
+				width: 50%;
+				margin: 10% auto;
+				font-size: var(--font-sm);
+			}
+		}
+		&--text {
+			width: 80%;
+			margin: 0 auto;
+			text-align: center;
+			font-size: var(--font-ss);
+			line-height: 2.5rem;
+			letter-spacing: 0.1rem;
+			@include mq(xl) {
+				width: 100%;
+				font-size: var(--font-sssl);
+				line-height: 2rem;
+			}
+		}
+	}
+	&__contact {
+		width: 10%;
+		height: 80px;
+		margin: 5% auto;
+		padding: 20px 35px;
+		border: 1.8px solid var(--color-text);
+		@include mq(xl) {
+			width: 40%;
+			height: 10%;
+			margin-top: 30%;
+			text-align: center;
+			padding: 20px auto;
+		}
+		&--link {
+			text-decoration: none;
+			color: var(--color-text);
+			text-align: center;
+			&--title {
+				font-size: var(--font-sm);
+				font-weight: var(--font-wnb);
+			}
+			&--text {
+				font-size: var(--font-sssm);
+				font-weight: var(--font-wl);
 			}
 		}
 	}

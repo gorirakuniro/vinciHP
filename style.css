@@ -22,7 +22,9 @@ body {
   --font-sssm: 0.5rem;
   --font-ssss: 0.3rem;
   --font-wb: 600;
+  --font-wnb: 500;
   --font-wn: 400;
+  --font-wnl: 300;
   --font-wl: 200;
   font-family: futura-pt, '游ゴシック体', 'Yu Gothic', YuGothic, sans-serif;
   font-style: normal;
@@ -45,14 +47,13 @@ body::-webkit-scrollbar {
   .container {
     width: 90%;
     margin: 5% auto;
-    overflow: hidden;
   }
 }
 
 .header {
-  width: 80%;
+  width: 86%;
   height: auto;
-  padding: 0 10%;
+  padding: 0 7%;
   position: fixed;
   top: 0;
   left: 0;
@@ -195,7 +196,7 @@ body::-webkit-scrollbar {
   width: 100%;
   margin: 0;
   font-size: var(--font-sl);
-  font-weight: var(--font-wb);
+  font-weight: var(--font-wnb);
   height: 120px;
   position: relative;
   overflow: hidden;
@@ -272,7 +273,7 @@ body::-webkit-scrollbar {
 
 .top_news .topnews__title {
   font-size: var(--font-sm);
-  font-weight: var(--font-wb);
+  font-weight: var(--font-wnb);
 }
 
 @media screen and (max-width: 1200px) {
@@ -359,7 +360,7 @@ body::-webkit-scrollbar {
 .top_news .topnews__news .topnews__list .topnews__item .topnews__text {
   width: 70%;
   font-size: --font-ssm;
-  font-weight: var(--font-wb);
+  font-weight: var(--font-wnb);
 }
 
 @media screen and (max-width: 1200px) {
@@ -383,7 +384,7 @@ body::-webkit-scrollbar {
 
 .top_work .topwork__title {
   font-size: var(--font-sm);
-  font-weight: var(--font-wb);
+  font-weight: var(--font-wnb);
   margin: 10px 0;
 }
 
@@ -461,10 +462,16 @@ body::-webkit-scrollbar {
 
 .top_work .topwork__list .topwork__item--img {
   display: block;
-  width: 300px;
-  height: 250px;
+  width: 100%;
+  height: 30vh;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+@media screen and (max-width: 1200px) {
+  .top_work .topwork__list .topwork__item--img {
+    height: 40vh;
+  }
 }
 
 .top_work .topwork__list .topwork__item--text {
@@ -472,7 +479,7 @@ body::-webkit-scrollbar {
   bottom: 10px;
   right: 10px;
   font-size: var(--font-ssl);
-  font-weight: var(--font-wb);
+  font-weight: var(--font-wnb);
 }
 
 .top_about {
@@ -515,7 +522,7 @@ body::-webkit-scrollbar {
 
 .top_about .topabout__left .topabout__title {
   font-size: var(--font-sm);
-  font-weight: var(--font-wb);
+  font-weight: var(--font-wnb);
   letter-spacing: 0.3rem;
 }
 
@@ -582,14 +589,14 @@ body::-webkit-scrollbar {
 
 .footer {
   width: 100%;
-  margin-top: 20%;
+  margin-top: 15%;
 }
 
 .footer .footer__text {
   width: 80%;
   margin: auto;
   font-size: var(--font-ssl);
-  font-weight: var(--font-wb);
+  font-weight: var(--font-wnb);
   text-align: center;
 }
 
@@ -621,7 +628,7 @@ body::-webkit-scrollbar {
 
 .workslist__text .workslist__title {
   font-size: var(--font-sl);
-  font-weight: var(--font-wb);
+  font-weight: var(--font-wnb);
   margin: 0;
 }
 
@@ -800,7 +807,6 @@ body::-webkit-scrollbar {
   width: 40%;
   height: 80vh;
   z-index: 55;
-  background: var(--color-main);
   -webkit-transition: 0.4s all;
   transition: 0.4s all;
 }
@@ -811,6 +817,7 @@ body::-webkit-scrollbar {
     height: 70vh;
     left: 5%;
     top: 30%;
+    background: var(--color-main);
     -webkit-transform: translateY(80%);
             transform: translateY(80%);
   }
@@ -900,6 +907,158 @@ body::-webkit-scrollbar {
   padding-right: 10px;
   font-size: var(--font-sssl);
   color: var(--color-text-sub);
+}
+
+.about {
+  width: 90%;
+  margin: 0 auto;
+  padding: 8% 0;
+}
+
+@media screen and (max-width: 1200px) {
+  .about {
+    margin: 10% auto;
+  }
+}
+
+.about__title {
+  font-size: var(--font-sl);
+  font-weight: var(--font-wnb);
+  letter-spacing: 0.3rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .about__title {
+    font-size: var(--font-sm);
+  }
+}
+
+.about__img {
+  width: 100%;
+  height: 70vh;
+  margin: 2% 0;
+}
+
+@media screen and (max-width: 1200px) {
+  .about__img {
+    height: 100%;
+    height: 40vh;
+  }
+}
+
+.about__img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.about__main {
+  width: 80%;
+  margin: 8% 0;
+}
+
+@media screen and (max-width: 1200px) {
+  .about__main {
+    width: 95%;
+  }
+}
+
+.about__main--item {
+  font-size: var(--font-sm);
+  letter-spacing: 0.1rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .about__main--item {
+    font-size: var(--font-ssl);
+  }
+}
+
+.about__main--text {
+  margin: 3% 0;
+  font-size: var(--font-ss);
+  line-height: 2.5rem;
+  letter-spacing: 0.1rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .about__main--text {
+    font-size: var(--font-ss);
+    line-height: 2rem;
+  }
+}
+
+.about__join {
+  width: 100%;
+  margin-top: 5%;
+}
+
+.about__join--title {
+  width: 30%;
+  margin: 3% auto;
+  text-align: center;
+  font-size: var(--font-sl);
+  font-weight: var(--font-wnb);
+}
+
+@media screen and (max-width: 1200px) {
+  .about__join--title {
+    width: 50%;
+    margin: 10% auto;
+    font-size: var(--font-sm);
+  }
+}
+
+.about__join--text {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: var(--font-ss);
+  line-height: 2.5rem;
+  letter-spacing: 0.1rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .about__join--text {
+    width: 100%;
+    font-size: var(--font-sssl);
+    line-height: 2rem;
+  }
+}
+
+.about__contact {
+  width: 10%;
+  height: 80px;
+  margin: 5% auto;
+  padding: 20px 35px;
+  border: 1.8px solid var(--color-text);
+}
+
+@media screen and (max-width: 1200px) {
+  .about__contact {
+    width: 40%;
+    height: 10%;
+    margin-top: 30%;
+    text-align: center;
+    padding: 20px auto;
+  }
+}
+
+.about__contact--link {
+  text-decoration: none;
+  color: var(--color-text);
+  text-align: center;
+}
+
+.about__contact--link--title {
+  font-size: var(--font-sm);
+  font-weight: var(--font-wnb);
+}
+
+.about__contact--link--text {
+  font-size: var(--font-sssm);
+  font-weight: var(--font-wl);
 }
 
 body {
