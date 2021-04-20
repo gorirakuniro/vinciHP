@@ -81,6 +81,7 @@ body::-webkit-scrollbar {
 
 .header .header__logo {
   width: 100px;
+  height: 100px;
   margin: 10px 0;
 }
 
@@ -90,8 +91,13 @@ body::-webkit-scrollbar {
   }
 }
 
-.header .header__logo img {
+.header .header__logo a {
   width: 100%;
+  text-align: center;
+}
+
+.header .header__logo a img {
+  height: 100%;
 }
 
 .header .header__gnav {
@@ -223,8 +229,9 @@ body::-webkit-scrollbar {
 
 @media screen and (max-width: 1200px) {
   .top_main .main__text .main__sub {
-    font-size: var(--font-sssl);
+    font-size: var(--font-sssm);
     height: 20px;
+    margin: 0;
   }
 }
 
@@ -243,7 +250,7 @@ body::-webkit-scrollbar {
 
 @media screen and (max-width: 1200px) {
   .top_main .main__image {
-    width: 100%;
+    width: 80%;
     height: auto;
     top: 50%;
     left: 50%;
@@ -1511,6 +1518,37 @@ nav.globalMenuSp.active {
     opacity: 10;
     fill: white;
     stroke-dashoffset: 0;
+  }
+}
+
+#slidewindow {
+  width: 100%;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.8);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+#slidewindow #slideshow {
+  width: auto;
+  height: 80%;
+  z-index: 99;
+  background: #fff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 1200px) {
+  #slidewindow #slideshow {
+    width: 80%;
+    height: auto;
   }
 }
 /*# sourceMappingURL=style.css.map */
